@@ -33,6 +33,13 @@ if len(argv) > 1:
     startdate = datetime.strptime(argv[2], '%d/%b/%Y')
 else:
     startdate = input("Введите дату начала дд/Ммм/гггг: ")
+    try:
+        # Преобразование введенной строки в объект datetime
+        date_check_format = datetime.strptime(startdate, '%d/%b/%Y')
+        print("Дата: ", date_check_format)
+    except ValueError:
+        # Вывод сообщения об ошибке, если введенная строка не соответствует формату
+        print("Ошибка! Введенная дата не соответствует формату %d/%b/%Y, пример 01/Jan/1999")
 
 if not startdate:
     print("Ошибка: дата не была введена")
@@ -45,6 +52,13 @@ if len(argv) > 1:
     enddate = datetime.strptime(argv[3], '%d/%b/%Y')
 else:
     enddate = input("Введите дату окончания дд/Ммм/гггг: ")
+    try:
+        # Преобразование введенной строки в объект datetime
+        date_check_format = datetime.strptime(enddate, '%d/%b/%Y')
+        print("Дата: ", date_check_format)
+    except ValueError:
+        # Вывод сообщения об ошибке, если введенная строка не соответствует формату
+        print("Ошибка! Введенная дата не соответствует формату %d/%b/%Y, пример 01/Jan/1999")
 
 if not enddate:
     print("Ошибка: дата окончания не была введена")
